@@ -1,0 +1,31 @@
+#heading {
+    margin: -20px;
+    padding-left: 40px;
+    padding-top: 35px;
+    padding-bottom: 10px;
+    background-color: black;
+    border-bottom: solid red 10px;
+}
+#subheading {
+    color:#e30000;
+}
+#resume {
+    background: rgba(128, 128, 128, .4);
+    border: solid black 4px;
+    max-width: 300px;
+    margin-top: 25px;
+}
+table {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+td{
+    text-align: left;
+}
+@media screen and (max-height: 600px) {
+    #resume {visibility: hidden;}
+    #heading {max-height: 100px;}
+    #headingPic {max-height: 75px;}}
+}
