@@ -11,6 +11,7 @@
     color:#e30000;
 }
 #resume {
+    visibility: hidden;
     font-size: 10pt;
     float: left;
     background: rgba(128, 128, 128, .4);
