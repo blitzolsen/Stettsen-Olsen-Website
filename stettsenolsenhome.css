@@ -15,8 +15,11 @@
     float: left;
     background: rgba(128, 128, 128, .4);
     border: solid black 4px;
-    max-width: 10%;
+    max-width: 300px;
     margin-top: 25px;
+}
+#resume_table {
+    max-width: 10%;
 }
 table {
     padding: 5px;
