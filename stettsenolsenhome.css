@@ -10,6 +10,7 @@
     color:#e30000;
 }
 #resume {
+    float: left;
     background: rgba(128, 128, 128, .4);
     border: solid black 4px;
     max-width: 300px;
@@ -25,11 +26,16 @@ td {
     text-align: left;
 }
 #content {
-    
+    margin-top: 25px;
+    padding-left: 400px;
+
+}
+a:hover {
+    background-color: red;
 }
 @media screen and (max-height: 600px) {
-    th {font-size: 12px;}
-    td {font-size: 12px;}
+    th {font-size: 10px;}
+    td {font-size: 10px;}
     #heading {max-height: 100px;}
     #headingPic {max-height: 75px;}
 }

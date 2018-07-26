@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Discus Fish E-commerce</title>
+    <script type="text/javascript" src="week07.js"></script>
+    <link rel="stylesheet" type="text/css" href="week07.css" />
+</head>
+
+<body onload="onLoad()">
+    <div id="site_heading">
+        <h1 id="welcome">Fresh Water Fish Store</h1>
+    </div>
+    <h2>2-day Shipping on all orders!</h2>
+    <div id="item_bank">
+        <table id="item_table">
+            <tr class="item_heading">
+                <th>Quantity</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Add to Cart</th>
+            </tr>
+            <tr class="item1r">
+                <td><input id="item1" class="quantity_input" type="number"></td>
+                <td><img class= "item_image" src="Super-Red-Turquoise-Discus-Fish.jpg" alt="Super"></td>
+                <td class= "item_description"><span id="item1_name">Super Red Turquoise Discus Fish</span><br><a href="https://www.azgardens.com/product/super-red-turquoise-discus-fish/">Original Site</a></td>
+                <td class="item_price" id="item1_price">$102.00</td>
+                <td><button onclick="validateNumber('item1')" class="cart_button" id="first_button" type="button">Add to Cart</button></td>
+            </tr>
+            <tr class="item2r">
+                <td><input id="item2" class="quantity_input" type="number"></td>
+                <td><img class= "item_image" src="Alenquer-Red-Discus-Fish-20-Pack.jpg" alt="Super"></td>
+                <td class= "item_description"><span id="item2_name">Alenquer Red Discus Fish</span><br><a href="https://www.azgardens.com/product/alenquer-red-discus-fish-3/">Original Site</a></td>
+                <td class="item_price" id="item2_price">$69.00</td>
+                <td><button onclick="validateNumber('item2')"class="cart_button" id="second_button" type="button">Add to Cart</button></td>                </tr>
+            <tr class="item3r">
+                <td><input id="item3" class="quantity_input" type="number"></td>
+                <td><img class= "item_image" src="Red-Pigeon-Blood-Discus.jpg" alt="Super"></td>
+                <td class= "item_description"><span id="item3_name">Red Pigeon Blood Discus</span><br><a href="https://www.azgardens.com/product/red-pigeon-blood-discus/">Original Site</a></td>
+                <td class="item_price" id="item3_price">$49.00</td>
+                <td><button onclick="validateNumber('item3')" class="cart_button" id="third_button" type="button">Add to Cart</button></td>
+            </tr>
+            <tr class="item4r">
+                <td><input id="item4" class="quantity_input" type="number"></td>
+                <td><img class= "item_image" src="Dwarf-Neon-Praecox-Large-Tropical-Rainbowfish.jpg" alt="Super"></td>
+                <td class= "item_description"><span id="item4_name">Dwarf Neon Praecox Large Tropical Rainbowfish</span><br><a href="https://www.azgardens.com/product/dwarf-neon-praecox-large-tropical-rainbowfish/">Original Site</a></td>
+                <td class="item_price" id="item4_price">$14.99</td>
+                <td><button onclick="validateNumber('item4')" class="cart_button" id="fourth_button" type="button">Add to Cart</button></td>
+            </tr>
+            <tr class="item5r">
+                <td><input id="item5" class="quantity_input" type="number"></td>
+                <td><img class= "item_image" src="Boesemani-Tropical-Rainbowfish.jpg" alt="Super"></td>
+                <td class= "item_description"><span id="item5_name">Boesemani Tropical Rainbowfish</span><br><a href="https://www.azgardens.com/product/boesemani-tropical-rainbowfish/">Original Site</a></td>
+                <td class="item_price" id="item5_price">$13.88</td>
+                <td><button onclick="validateNumber('item5')" class="cart_button" id="fifth_button" type="button">Add to Cart</button></td>
+            </tr>
+            <tr class="item6r">
+                <td><input id="item6" class="quantity_input" type="number"></td>
+                <td><img class= "item_image" src="Yellow-Rainbowfish-Tropical-Fish.jpg" alt="Super"></td>
+                <td class= "item_description"><span id="item6_name">Yellow Rainbowfish Tropical Fish</span><br><a href="https://www.azgardens.com/product/yellow-rainbowfish-tropical-fish/">Original Site</a></td>
+                <td class="item_price" id="item6_price">$17.99</td>
+                <td><button onclick="validateNumber('item6')" class="cart_button" id="sixth_button" type="button">Add to Cart</button></td>
+            </tr>
+        </table>
+        <h3>Total</h3>
+        <div id="total_section">
+            <table>
+                <tr>
+                    <td></td>
+                    <td>$</td>
+                    <td id="before_tax">0.00</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>$</td>
+                    <td id="tax">0.00</td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>$</td>
+                    <td id="shipping">0.00</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>$</td>
+                    <td id="grand_total">0.00</td>
+                </tr>
+            </table>
+            <button onclick="onResetCart()" type="button">Clear Cart</button>       
+        </div>
+        <form action="review.php" onsubmit="onSubmit()" onreset="onResetForm()" method="post">
+                        <h3>Cart</h3>
+                        <p id=cart_items>
+                        </p>
+                        <input type="hidden" name="tax2" id="tax2">
+                        <input type="hidden" name="shipping2" id="shipping2">
+                        <input type="hidden" name="grand_total2" id="grand_total2">
+                        <input type="hidden" name="cart_items2" id="cart_items2">
+            <h3>Billing and Shipping Information</h3>
+            <input oninput="verifyName(this.value, 'firstName')" type="text" name="first_name" placeholder="First Name">
+            <input oninput="verifyName(this.value, 'lastName')" type="text" name="last_name" placeholder="Last Name">
+            <span class="firstName" style="color:red">Invalid First Name</span>
+            <span class="lastName" style="color:red">Invalid Last Name</span><br>
+            <input oninput="verifyAddress(this.value, 'addressf')"type="text" name="address" placeholder="Address">
+            <span class="addressf" style="color:red">Invalid Address</span><br>
+            <input oninput="verifyCity(this.value, 'addressc')"type="text" name="address_city" placeholder="City">
+            <input oninput="verifyState(this.value, 'addresss')"type="text" name="address_state" placeholder="State">
+            <input oninput="verifyZip(this.value, 'addressz')"type="text" name="address_zip" placeholder="Zip Code">
+            <span class="addressc" style="color:red">Invalid City</span>
+            <span class="addresss" style="color:red">Invalid State</span>
+            <span class="addressz" style="color:red">Invalid Zip Code</span><br>
+            <input oninput="verifyPhone(this.value, 'phonen')"type="text" name="phone_number" placeholder="Phone Number Ex. (555)-555-5555">
+            <span class="phonen" style="color:red">Invalid Phone Number</span><br>
+            <input oninput="verifyCard(this.value, 'cardn')"type="text" name="card_number" placeholder="Credit/Debit Card Ex. 4444-4444-4444-4444">
+            <span class="cardn" style="color:red">Invalid Card Number</span><br>
+            <select name="card_month">
+                    <option value="January">01</option>
+                    <option value="February">02</option>
+                    <option value="March">03</option>
+                    <option value="April">04</option>
+                    <option value="May">05</option>
+                    <option value="June">06</option>
+                    <option value="July">07</option>
+                    <option value="August">08</option>
+                    <option value="September">09</option>
+                    <option value="October">10</option>
+                    <option value="November">11</option>
+                    <option value="December">12</option>
+                  </select>
+                  <select name="card_year">
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                      </select><br>
+            <input type="reset" value="Reset Info"/>
+            <input type="submit" value="Purchase"/>
+        </form>
+    </div>
+</body>
+
+</html>

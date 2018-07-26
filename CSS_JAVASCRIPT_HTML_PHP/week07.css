@@ -1,0 +1,17 @@
+#site_heading { 
+	margin-top:-81px; 
+	margin-left:-11px;
+}
+.quantity_input {
+    max-width: 40px;
+}
+.item_image {
+    max-height: 100px;
+}
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#address_input {
+    max-width: 700px;
+}
