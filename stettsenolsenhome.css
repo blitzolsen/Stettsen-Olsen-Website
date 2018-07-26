@@ -20,14 +20,14 @@ table {
     padding: 5px;
 }
 th {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     vertical-align: top;
     text-align: left;
 }
 td {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     vertical-align: top;
     text-align: left;
 }
