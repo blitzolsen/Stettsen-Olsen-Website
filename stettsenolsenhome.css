@@ -40,11 +40,11 @@ td {
 .piclink:hover {
     background-color: red;
 }
-.background {
-    background: "RedSpace.jpg";
+body {
+    background: url("https://github.com/blitzolsen/blitzolsen.github.io/blob/master/RedSpace.jpg");
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 @media screen and (max-height: 600px) {
     th {font-size: 10px;}
