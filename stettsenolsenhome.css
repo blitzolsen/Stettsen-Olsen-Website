@@ -13,7 +13,7 @@
 #resume {
     visibility: hidden;
     font-size: 10pt;
-    /*float: left;*/
+    float: left;
     background: rgba(128, 128, 128, .4);
     border: solid black 4px;
     max-width: 300px;
