@@ -21,8 +21,11 @@ table {
 th {
     text-align: left;
 }
-td{
+td {
     text-align: left;
+}
+#content {
+    
 }
 @media screen and (max-height: 600px) {
     th {font-size: 12px;}
