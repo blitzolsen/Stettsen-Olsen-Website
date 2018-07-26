@@ -26,6 +26,6 @@ td{
 }
 @media screen and (max-height: 600px) {
     #resume {visibility: hidden;}
-    #heading {max-height: 100px;}
-    #headingPic {max-height: 75px;}
+    #heading {max-height: 12%;}
+    #headingPic {max-height: 10%;}
 }
