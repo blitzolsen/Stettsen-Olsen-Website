@@ -1,0 +1,95 @@
+/* The sidebar menu */
+/* Style */
+.sidenav {
+    background: rgb(255, 187, 0); 
+    margin-top: -18px;
+    border-left: solid yellow 4px;
+    border-right: solid yellow 4px;
+    border-bottom: solid yellow 4px;
+    text-align: center;
+}
+/* Style */
+#head {
+    margin-top: 30px;
+    border-bottom: solid black 6px;
+    background: url(http://images6.fanpop.com/image/photos/39700000/orange-slices-wallpaper-patterns-backgrounds-wallpaper-39761220-2560-1440.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 25px;
+    margin: -10px;
+}
+/* Style */
+body {
+    background: lightblue;
+}
+
+/* Style */
+#nextpage {
+    font-family: Segoe UI;
+    background: url(https://naldzgraphics.net/wp-content/uploads/2011/10/16-tiny-flower-pattern.jpg);
+    padding: 5px 20px;
+    border-radius: 6px;
+    box-shadow: 5px 10px rgba(90, 90, 90, 0.616);
+    color: black;
+}
+#login {
+    position: relative;
+    margin-left: 400px;
+    left: 50%;
+    top: -120px;
+}
+/* Style */
+li {
+    color: white;
+}
+/* Style */
+h1 {
+    font-style: oblique;
+    color: rgb(255, 187, 0);
+    font-size: 52px;
+}
+/* Style */
+h2{
+    color: rgb(255, 251, 0);
+    font-weight: bold;
+    font-size: 45px;
+}
+/* Style */
+#aboutus {
+    text-decoration: underline;
+    font-size: 24px;
+}
+/* Style */
+.employee {
+    text-align: center;
+    color: rgb(255, 187, 0);
+    font-size: 42px;
+    margin-top: -40px;
+}
+/* Style */
+#meet{
+    font-style: italic;
+    font-family: Segoe UI;
+}
+/* Style */
+#colb4 {
+    font-family: Segoe UI;
+}
+/* Style */
+.free {
+   margin-left: 0px;
+   text-align: center;
+}
+/* Style */
+#rowone{
+    font-family: Segoe UI;
+   font-size: 24px;
+}
+/* Style */
+#rowthree{
+   background: white;
+}
+/* Style */
+#rowfive{
+   background: white;
+}
