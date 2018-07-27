@@ -1,5 +1,6 @@
 function problem1() {
     console.log("Hello World");
+    document.getElementById("problem1").innerHTML = "Hello World";
 }
 function problem2(name2, text2) {
     var text3 = text2.toString().split(" ");
@@ -13,10 +14,12 @@ function problem2(name2, text2) {
         text2 = text3.join(" ");
     }
     console.log(text2);
+    document.getElementById("text2").innerHTML = text2;
 }
 function problem3(number) {
     num2 = Number((number - 32) * 5 / 9).toFixed(1);
     console.log(num2);
+    document.getElementById("problem3").innerHTML = num2;
 }
 function problem4(number) {
     var rate = 0;
@@ -40,6 +43,7 @@ function problem4(number) {
             console.log("Invalid weight");
         }
         console.log("$" + Number(rate).toFixed(2));
+        document.getElementById("problem4").innerHTML = "$" + Number(rate).toFixed(2);
     }
 }
 function problem5(apr, term, amount) {
@@ -49,4 +53,5 @@ function problem5(apr, term, amount) {
      }
      amount2 = amount2 * amount;
     console.log("$" + Number(amount2).toFixed(2));
+    document.getElementById("problem5").innerHTML = "$" + Number(amount2).toFixed(2);
 }
