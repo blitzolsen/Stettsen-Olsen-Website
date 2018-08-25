@@ -1,11 +1,16 @@
+
 #heading {
-    margin: -20px;
+    margin: auto;
     padding-left: 40px;
     padding-top: 35px;
-    min-width: 100%;
     padding-bottom: 10px;
-    background-color: black;
-    border-bottom: solid red 10px;
+    background: rgba(255, 255, 255, .4);
+}
+#headingback {
+    background: url('aurabor.jpg');
+    width: 100%;
+    height: 0;
+    padding-bottom: 35%;
 }
 #subheading {
     color:#e30000;
@@ -35,14 +40,9 @@ td {
     text-align: left;
 }
 #content {
-    margin-top: 40px;
-    padding-left: 20px;/*
-    padding-left: 400px;*/
+    
+    text-align: center;
 
-}
-#PortfolioHeader {
-    max-width: 80%;
-    border-bottom: solid black 2px;
 }
 .textlink:hover {
     color: red;
@@ -51,18 +51,53 @@ td {
     background-color: red;
 }
 body {
-    background: rgba(255, 255, 255, .9);
+    /*background: rgba(255, 255, 255, .4);*/
+    margin: 0%;
     font-family: "Verdana", Geneva, sans-serif;
 }
+/*
 html { 
-    background: url('RedSpace.png');
+    background: url('aurabor.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}*/
+.project{
+    width: 50%;
+}
+.piclink {
+    width: 50%;
+}
+.videocontainer {
+    position: relative;
+     width: 50%;
+     height: 0;
+     padding-bottom: 28.125%;
+}
+.iframevid {
+    position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
 }
 @media screen and (max-height: 600px) {
     th {font-size: 10px;}
     td {font-size: 10px;}
     #heading {max-height: 100px;}
     #headingPic {max-height: 75px;}
+}
+@media screen and (max-width: 600px) {
+    .videocontainer {
+        position: relative;
+     width: 100%;
+     height: 0;
+     padding-bottom: 56.25%;
+    }
+    .project{
+        width: 100%;
+    }
+    .piclink {
+        width: 100%;
+    }
 }

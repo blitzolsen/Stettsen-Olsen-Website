@@ -8,8 +8,12 @@
 </head>
 
 <body>
+        <div id="headingback">
     <div id="heading">
-        <img id="headingPic" src="Header3.png" height="150">
+        <!--<img id="headingPic" src="Header3.png" height="150">-->
+        <h1>Stettsen Olsen</h1>
+        <h2>Software Engineer</h2>
+        </div>
     </div>
     <!-- Resume 
 <div id="resume">
@@ -59,48 +63,51 @@
     </table>
 </div>-->
 <div id="content">
-    <div id="PortfolioHeader">
-        <img src="Portfolio.png" alt="PortfolioHeader" style="height: 24pt;">
-    </div>
     <p><a class="textlink" href="https://github.com/blitzolsen/Portfolio.git" target="_blank">View Portfolio in GitHub</a></p>
-    <table id="Porfolio">
-        <tr>
-            <th><img src="PHP and Javascript.png" alt="PortfolioHeader" style="height: 18pt;"></th>
-            <th><img src="CSS.png" alt="PortfolioHeader" style="height: 18pt;"></th>
-            <th><img src="Javascript.png" alt="PortfolioHeader" style="height: 18pt;"></th>
-        </tr>
-        <tr>
-            <td style="max-width: 350px;">
-                <span style="color: #e30000">Fresh Water Fish Mock E-Commerce Site</span>
-                    <a class="piclink" href="CSS_JAVASCRIPT_HTML_PHP/index.html" target="_blank">
-                            <img src="freshWaterPHPMock.png" alt="Fresh Water Fish Mock E-Commerce" style="width:350px;">
-                    </a> 
-                    <br>You may view the webpage above or, because GitHub does not support PHP, you may wish to use <a class="textlink" href="https://github.com/blitzolsen/Portfolio/tree/master/CSS_JAVASCRIPT_HTML_PHP" target="_blank">this</a> link
-            </td>
-            <td style="max-width: 350px;">
-                    <span style="color: #e30000">Mock Website</span>
-                        <a class="piclink" href="CSS/index.html" target="_blank">
-                                <img src="oranges site.png" alt="Oranges Site" style="width:350px;">
+    <div id="Porfolio">
+        <div class="project" id="PHPandJavaScript">
+                <img src="PHP and Javascript.png" alt="PortfolioHeader" style="height: 18pt;"><br>
+                
+                        <span style="color: #e30000">Fresh Water Fish Mock E-Commerce Site</span><br>
+                            <a  href="CSS_JAVASCRIPT_HTML_PHP/index.html" target="_blank">
+                                    <img class="piclink" src="freshWaterPHPMock.png" alt="Fresh Water Fish Mock E-Commerce">
+                            </a> 
+                            <p>You may view the webpage above or, because GitHub does not support PHP, you may wish to use <a class="textlink" href="https://github.com/blitzolsen/Portfolio/tree/master/CSS_JAVASCRIPT_HTML_PHP" target="_blank">this</a> link
+                        </p>
+
+        </div>            
+        <div class="project" id="CSS">
+            <img src="CSS.png" alt="PortfolioHeader" style="height: 18pt;">
+            <p>
+                    <span style="color: #e30000">Mock Website</span><br>
+                        <a href="CSS/index.html" target="_blank">
+                                <img class="piclink" src="oranges site.png" alt="Oranges Site">
                         </a> 
                         <br>See code in <a class="textlink" href="https://github.com/blitzolsen/Portfolio/tree/master/CSS" target="_blank">Repository</a>
-                </td>
-                <td style="max-width: 350px;">
-                        <span style="color: #e30000">JavaScript Website</span>
-                            <a class="piclink" href="JAVASCRIPT/index.html" target="_blank">
-                                    <img src="javascript_site.png" alt="Oranges Site" style="width:350px;">
+                    </p>
+        </div>
+            <div class="project" id="JavaScript">
+                <img src="Javascript.png" alt="PortfolioHeader" style="height: 18pt;">
+                <p>
+                        <span style="color: #e30000">JavaScript Website</span><br>
+                            <a href="JAVASCRIPT/index.html" target="_blank">
+                                    <img class="piclink" src="javascript_site.png" alt="Oranges Site">
                             </a> 
                             <br>See code in <a class="textlink" href="https://github.com/blitzolsen/Portfolio/tree/master/JAVASCRIPT" target="_blank">Repository</a>
-                    </td>
-        </tr>
-        <tr>
-                <th style="padding-top: 40px;"><img src="android and java.png" alt="android and java" style="height: 18pt;"></th>
-        </tr>
-        <td style="max-width: 350px;">
-                <span style="color: #e30000">The Meal Master Application</span>
-                <iframe width="350" height="197" src="https://www.youtube.com/embed/PjoszaB-sAw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> 
-                <br>See code in <a class="textlink" href="https://github.com/blitzolsen/MealMaster/" target="_blank">Repository</a>
-                </td>
-    </table>   
+                        </p>
+            </div>
+            <div class="project" id="android">
+                <img src="android and java.png" alt="android and java" style="height: 18pt;">
+                <p>
+                        <span style="color: #e30000">The Meal Master Application</span><br>
+                        <div class="videocontainer">
+                        <iframe class="iframevid" scr="https://www.youtube.com/embed/PjoszaB-sAw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <br>See code in <a class="textlink" href="https://github.com/blitzolsen/MealMaster/" target="_blank">Repository</a>
+                </p>
+            </div>
+            </div>
+
 
 </div>
 </body>
