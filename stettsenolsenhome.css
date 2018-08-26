@@ -76,18 +76,19 @@ html {
     margin: auto;
 }
 .piclink {
-    width: 50%;
+    width: 75%;
 }
 .videocontainer {
     position: relative;
-     width: 50%;
+    margin: auto;
+     width: 75%;
      height: 0;
-     padding-bottom: 28.125%;
+     padding-bottom: 42.1875%;
 }
 .iframevid {
     position: absolute;
      top: 0;
-     left: 50%;
+     left: 0;
      width: 100%;
      height: 100%;
 }
@@ -124,5 +125,17 @@ html {
     }
     .piclink {
         width: 100%;
+    }
+}
+@media screen and (max-width: 1500px) {
+    .tabs {
+        font-size: inherit;
+        position: relative;
+    }
+    .navigation {
+        position: relative;
+    }
+    #resume {
+        max-width: 100%;
     }
 }
