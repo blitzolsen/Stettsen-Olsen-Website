@@ -53,6 +53,12 @@ body {
     margin: 0%;
     font-family: "Verdana", Geneva, sans-serif;
 }
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18pt;
+}
 /*
 html { 
     background: url('aurabor.jpg');

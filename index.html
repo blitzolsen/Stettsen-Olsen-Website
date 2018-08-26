@@ -5,6 +5,17 @@
     <link rel="icon" type="image/png" href="favicon.png" />
     <title>Stettsen Olsen - Home</title>
     <link rel="stylesheet" type="text/css" href="stettsenolsenhome.css">
+    <script>
+    window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 2000 || document.documentElement.scrollTop > 20) {
+        document.getElementById("backToTop").style.display = "block";
+    } else {
+        document.getElementById("backToTop").style.display = "none";
+    }
+}
+</script>
 </head>
 
 <body>
@@ -19,6 +30,7 @@
                 <button class="tabs"onclick="window.location.href='#JavaScript'">JavaScript</button>
                 <button class="tabs"onclick="window.location.href='#CSS'">CSS</button>
                 <button class="tabs"onclick="window.location.href='#PHPandJavaScript'">PHP and Javascript</button>
+                <button class="tabs"onclick="window.location.href='https://github.com/blitzolsen/Portfolio.git'">View Portfolio on GitHub</button>
             </div>
         </div>
 
@@ -71,12 +83,8 @@
     </div>
 
 
-    <div id="content">
-        <p>
-            <a class="textlink" href="https://github.com/blitzolsen/Portfolio.git" target="_blank">View Portfolio in GitHub</a>
-        </p>
-
-
+    <div id="content" style="padding-top: 20px;">
+  
         <div class="project" id="PHPandJavaScript">
             <img src="PHP and Javascript.png" alt="PortfolioHeader" style="height: 18pt;">
             <br>
@@ -137,6 +145,7 @@
 
 
     </div>
+    <button id="backToTop" onclick="window.location.href='#headingback'">Back to Top</button>
 </body>
 
 </html>
