@@ -64,16 +64,15 @@ body {
     background-color: rgba(0, 3, 173, 0.6);
     border-radius: 12px;
 }
-/*
-html { 
-    background: url('aurabor.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}*/
+.skill {
+    max-width: 50%;
+    padding-top: 25px;
+}
 .project{
-    width: 50%;
+    width: 80%;
+    padding-bottom: 30px;
     margin: auto;
+    background: url("blackback.png");
 }
 .piclink {
     width: 75%;
