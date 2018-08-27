@@ -16,7 +16,11 @@ function scrollFunction() {
     }
 }
 function resumeVis() {
+    if (document.getElementById("resume").style.visibility=="visible"){
+        document.getElementById("resume").style.visibility="hidden";
+    } else {
         document.getElementById("resume").style.visibility="visible";
+    }
 }
 function bybyResume() {
     document.getElementById("resume").style.visibility="hidden";
