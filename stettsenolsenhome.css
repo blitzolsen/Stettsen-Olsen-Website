@@ -1,10 +1,9 @@
 
 #heading {
-    position: relative;
+    /*position: relative;*/
     margin: auto;
     padding-left: 40px;
     padding-top: 35px;
-    padding-bottom: 10px;
     background: rgba(255, 255, 255, .4);
 }
 .headingPic {
@@ -72,7 +71,7 @@ body {
     width: 80%;
     padding-bottom: 30px;
     margin: auto;
-    background: url("blackback.png");
+   /* background: url("blackback.png");*/
 }
 .piclink {
     width: 75%;
@@ -92,16 +91,19 @@ body {
      height: 100%;
 }
 .navigation {
+    font-size: 0; /*will remove spaces between buttons*/
+    /*
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 0;*/
 }
 .tabs {
+    font-size: 12pt;
     padding: 12px 16px;
     border: none;
     outline: none;
     font-size: 22pt;
-    float: right;
+    /*float: left;*/
 }
 .tabs:hover {
     background-color: rgba(255, 255, 255, 0);
