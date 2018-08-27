@@ -129,14 +129,7 @@ body {
     }
 }
 @media screen and (max-width: 1500px) {
-    .tabs {
-        font-size: inherit;
-        position: relative;
-    }
-    .navigation {
-        position: relative;
-    }
     #resume {
-        max-width: 100%;
+        max-width: 40%;
     }
 }
