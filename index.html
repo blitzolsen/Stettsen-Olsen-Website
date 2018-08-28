@@ -26,10 +26,15 @@
             document.getElementById("resume").style.visibility = "hidden";
         }
         function adjustSize(){
-            document.getElementById("resume").style.maxHeight = (window.innerHeight * .8) + "px";
+            document.getElementById("resume").style.maxHeight = (window.innerHeight * .7) + "px";
             document.getElementById("resume").style.width = (window.innerWidth * .4) + "px";
-            document.getElementById("resume").style.fontSize =  .85 + "vw";
-            document.getElementById("hidebtn").style.fontSize =  .85 + "vw";
+            document.getElementById("resume").style.fontSize =  .8 + "vw";
+            if (widow.innerWidth < 900) {
+                document.getElementsByClassName("tabs").style.fontSize =  .6 + "vw";  
+            } else {
+                document.getElementsByClassName("tabs").style.fontSize =  .8 + "vw";  
+            }
+            document.getElementById("hidebtn").style.fontSize =  .8 + "vw";
         }
     </script>
 </head>
