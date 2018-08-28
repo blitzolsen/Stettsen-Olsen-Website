@@ -58,7 +58,7 @@ body {
 }
 #resumeflat{
     max-width: 70%;
-    margin-left: 5%;
+    margin-left: 10%; 
 }
 #backToTop {
     position: fixed;
