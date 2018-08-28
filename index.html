@@ -26,8 +26,10 @@
             document.getElementById("resume").style.visibility = "hidden";
         }
         function adjustSize(){
-            document.getElementById("resume").style.maxHeight = (window.innerHeight * .7) + "px";
+            document.getElementById("resume").style.maxHeight = (window.innerHeight * .8) + "px";
             document.getElementById("resume").style.width = (window.innerWidth * .4) + "px";
+            document.getElementById("resume").style.fontSize =  .85 + "vw";
+            document.getElementById("hidebtn").style.fontSize =  .85 + "vw";
         }
     </script>
 </head>
@@ -43,7 +45,7 @@
             <div class="navigation">
                 <!--<h3 style="border-bottom: solid black 2px; margin-bottom: 0;">Navigation</h3>-->
                 <button class="tabs" onclick="resumeVis()">Resume</button>
-                <button class="tabs" onclick="window.location.href='https://github.com/blitzolsen/Portfolio.git'">View Portfolio
+                <button class="tabs" onclick="window.open('https://github.com/blitzolsen/Portfolio.git')">View Portfolio
                     on GitHub</button>
                 <button class="tabs" onclick="window.location.href='#PHPandJavaScript'">PHP and Javascript</button>
                 <button class="tabs" onclick="window.location.href='#CSS'">CSS</button>
@@ -109,7 +111,7 @@
                 </tr>
                 </tr>
             </table>
-            <button onclick="bybyResume()">Hide Resume</button>
+            <button id="hidebtn" onclick="bybyResume()">Hide Resume</button>
         </div>
     </div>
 
