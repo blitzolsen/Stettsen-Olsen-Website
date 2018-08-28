@@ -25,16 +25,16 @@
         function bybyResume() {
             document.getElementById("resume").style.visibility = "hidden";
         }
-        function adjustSize(){
+        function adjustSize() {
             document.getElementById("resume").style.maxHeight = (window.innerHeight * .7) + "px";
             document.getElementById("resume").style.width = (window.innerWidth * .4) + "px";
-            document.getElementById("resume").style.fontSize =  .8 + "vw";
+            document.getElementById("resume").style.fontSize = .8 + "vw";
             if (widow.innerWidth < 900) {
-                document.getElementsByClassName("tabs").style.fontSize =  .6 + "vw";  
+                document.getElementsByClassName("tabs").style.fontSize = .6 + "vw";
             } else {
-                document.getElementsByClassName("tabs").style.fontSize =  1 + "vw";  
+                document.getElementsByClassName("tabs").style.fontSize = 1 + "vw";
             }
-            document.getElementById("hidebtn").style.fontSize =  .8 + "vw";
+            document.getElementById("hidebtn").style.fontSize = .8 + "vw";
         }
     </script>
 </head>
@@ -118,7 +118,8 @@
                 </tr>
             </table>-->
             <img id="resumeflat" src="resumeflat.png" alt="resumeflat">
-            <a href="https://github.com/blitzolsen/Portfolio/blob/master/Resume%20Stettsen%20Olsen.pdf" target="_blank">View PDF</a>
+            <a href="https://github.com/blitzolsen/Portfolio/blob/master/Resume%20Stettsen%20Olsen.pdf" target="_blank">View
+                PDF</a>
             <!--<button id="hidebtn" onclick="bybyResume()">Hide Resume</button>-->
         </div>
     </div>
@@ -168,20 +169,20 @@
                 <a class="textlink" href="https://github.com/blitzolsen/Portfolio/tree/master/JAVASCRIPT" target="_blank">Repository</a>
             </p>
         </div>
-
-
+        <iframe class="iframevid" src="https://www.youtube.com/embed/PjoszaB-sAw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>    
+              
         <div class="project" id="android">
             <img class="skill" src="android and java.png" alt="android and java">
             <p>
                 <span style="color: #e30000">The Meal Master Application</span>
                 <br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/PjoszaB-sAw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="videocontainer">
+                    <iframe class="iframevid" src="https://www.youtube.com/embed/PjoszaB-sAw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>    
+                </div>
                 <br>See code in
                 <a class="textlink" href="https://github.com/blitzolsen/MealMaster/" target="_blank">Repository</a>
             </p>
         </div>
-
-
     </div>
     <button id="backToTop" onclick="window.location.href='#headingback'">Back to Top</button>
 </body>
