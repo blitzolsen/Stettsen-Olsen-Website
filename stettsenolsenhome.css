@@ -60,6 +60,15 @@ body {
     padding-top: 10px;
     color: white;
 }
+#CSS{
+    background: url("b2.png");
+}
+#JavaScript{
+    background: url("x7t5l5az.png");
+}
+#android{
+    background: url("b2.png");
+}
 #resumeflat{
     max-width: 70%;
     margin-left: 10%; 
@@ -78,10 +87,8 @@ body {
     padding-top: 25px;
 }
 .project{
-    width: 80%;
     padding-bottom: 30px;
     margin: auto;
-   /* background: url("blackback.png");*/
 }
 .piclink {
     width: 75%;
