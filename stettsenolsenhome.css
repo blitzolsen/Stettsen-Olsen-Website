@@ -2,12 +2,13 @@
 #heading {
     /*position: relative;*/
     margin: auto;
-    background: rgba(255, 255, 255, .5);
+    /*background: rgba(255, 255, 255, .5);*/
 }
 #logo {
     padding-left: 40px;
     padding-top: 35px;
     padding-bottom: 10px;
+    background: rgba(255, 255, 255, .5);
 }
 .headingPic {
     max-width: 25%;
@@ -93,7 +94,7 @@ body {
 }
 .navigation {
     font-size: 0; /*will remove spaces between buttons*/
-    background: rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255, .5);
     /*
     position: absolute;
     bottom: 0;
