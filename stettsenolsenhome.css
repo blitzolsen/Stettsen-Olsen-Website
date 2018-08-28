@@ -56,6 +56,10 @@ body {
     margin: 0%;
     font-family: "Verdana", Geneva, sans-serif;
 }
+#resumeflat{
+    max-width: 70%;
+    margin-left: 5%;
+}
 #backToTop {
     position: fixed;
     bottom: 20px;
