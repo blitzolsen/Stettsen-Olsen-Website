@@ -134,10 +134,6 @@ body {
     background-color: rgba(255, 255, 255, .4);
 }
 @media screen and (max-height: 600px) {
-    th {font-size: 10px;}
-    td {font-size: 10px;}
-    #heading {max-height: 100px;}
-    #headingPic {max-height: 75px;}
 }
 @media screen and (max-width: 1380px) {
     .project{
