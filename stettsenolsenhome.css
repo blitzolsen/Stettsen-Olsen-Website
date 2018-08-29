@@ -28,6 +28,14 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
+.rightproject{
+    float: right;
+    max-width: 50%;
+}
+.leftproject{
+    float: left;
+    max-width: 50%;
+}
 th {
     padding-left: 10px;
     padding-right: 10px;
@@ -57,7 +65,6 @@ body {
 }
 #PHPandJavaScript{
     background: url("x7t5l5az.png");
-    padding-top: 10px;
     color: white;
 }
 #CSS{
@@ -87,11 +94,16 @@ body {
     padding-top: 25px;
 }
 .project{
-    padding-bottom: 30px;
+    width: 100%;
+    padding-bottom: 400px;
+}
+.lrcontainer {
     margin: auto;
+    width: 90%;
+    height: 30%;
 }
 .piclink {
-    width: 75%;
+   width: 100%;
 }
 .videocontainer {
     position: relative;
