@@ -95,7 +95,7 @@ body {
 }
 .project{
     width: 100%;
-    padding-bottom: 400px;
+    padding-bottom: 600px;
 }
 .lrcontainer {
     margin: auto;
@@ -138,4 +138,10 @@ body {
     td {font-size: 10px;}
     #heading {max-height: 100px;}
     #headingPic {max-height: 75px;}
+}
+@media screen and (max-width: 1380px) {
+    .project{
+        width: 100%;
+        padding-bottom: 400px;
+    }
 }
