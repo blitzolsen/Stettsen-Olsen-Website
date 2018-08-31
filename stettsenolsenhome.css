@@ -133,7 +133,7 @@ body {
 .tabs:hover {
     background-color: rgba(255, 255, 255, .4);
 }
-@media screen and (max-width: 360px) {
+@media (min-width: 320px) and (max-width: 480px) {
     .rightproject{
         float: none;
         max-width: 100%;
