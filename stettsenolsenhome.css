@@ -134,6 +134,9 @@ body {
     background-color: rgba(255, 255, 255, .4);
 }
 @media only screen and (max-device-width: 480px) {
+    body{
+        font-size: 10vh;
+    }
     .rightproject{
         float: none;
         max-width: 100%;
