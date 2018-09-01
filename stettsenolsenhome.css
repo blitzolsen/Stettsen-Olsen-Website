@@ -23,10 +23,13 @@
     color:#e30000;
 }
 #resume {
-    background: rgba(255, 255, 255, .5);
+    background: rgba(255, 255, 255, .9);
     visibility: hidden;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    position: fixed;
+    margin: auto;
+    border-radius: 12px;
+}
+#resumeflat{
 }
 .rightproject{
     float: right;
@@ -75,10 +78,6 @@ body {
 }
 #android{
     background: url("b2.png");
-}
-#resumeflat{
-    max-width: 70%;
-    margin-left: 10%; 
 }
 #backToTop {
     position: fixed;
@@ -129,13 +128,16 @@ body {
     outline: none;
     color: black;
     background: rgba(255, 255, 255, 0);
-}
+}<link rel="icon" type="image/png" href="favicon.png" />
+<title>Stettsen Olsen - Home</title>
+<link rel="stylesheet" type="text/css" href="stettsenolsenhome.css">
+
 .tabs:hover {
     background-color: rgba(255, 255, 255, .4);
 }
 @media only screen and (max-device-width: 480px) {
     body{
-        font-size: 10vh;
+        font-size: 2vh;
     }
     .rightproject{
         float: none;
