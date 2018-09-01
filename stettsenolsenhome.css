@@ -36,6 +36,7 @@
     margin: auto;
 }
 #resumeflat{
+    padding-top: 2%;
     height: 90%;
     background: rgba(255, 255, 255, 1.0);
 }
@@ -154,6 +155,18 @@ body {
     .leftproject{
         float: none;
         max-width: 100%;
+    }
+    #resume {
+        background: rgba(255, 255, 255, .9);
+        visibility: hidden;
+        position: fixed;
+        top: 5%;
+        left: 0%;
+        right: 0%;
+        bottom: 5%;
+        border-radius: 12px;
+        text-align: center;
+        margin: auto;
     }
 }
 @media screen and (max-width: 1380px) {
