@@ -153,6 +153,13 @@ body {
 
 
 @media only screen and (max-device-width: 480px) {
+    #logo {
+        padding: 10px;
+        background: rgba(255, 255, 255, .5);
+    }
+    .headingPic {
+        max-width: 100%;
+    }
     body{
         font-size: 3vh;
     }
@@ -172,13 +179,15 @@ body {
         display: block;
         width: 100%;
         font-size: 3vh;
+        background: rgba(255, 255, 255, .5);
+        border-radius: 6pt;
     }
     .project{
         width: 100%;
         padding-bottom: 0;
     }
     .skill {
-        max-height: 7vh;
+        max-height: 5vh;
         padding-top: 25px;
     }
     #backToTop {
