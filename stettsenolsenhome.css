@@ -191,7 +191,7 @@ body {
         padding-top: 25px;
     }
     #backToTop {
-        display: none;
+        visibility: hidden;
     }
     #closebtnimg{
         max-width: 10%;
