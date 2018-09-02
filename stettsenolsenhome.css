@@ -213,6 +213,9 @@ body {
     .resumebtn {
         padding-bottom: 10px;
     }
+    #qoute {
+        font-size: 32pt;
+    }
 }
 @media screen and (max-width: 1380px) {
     .project{
