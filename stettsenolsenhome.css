@@ -150,6 +150,8 @@ body {
 .tabs:hover {
     background-color: rgba(255, 255, 255, .4);
 }
+
+
 @media only screen and (max-device-width: 480px) {
     body{
         font-size: 3vh;
@@ -179,6 +181,8 @@ body {
     }
     .mobilebtn {
         display: block;
+        width: 100%;
+        font-size: 3vh;
     }
     .project{
         width: 100%;
@@ -187,6 +191,9 @@ body {
     .skill {
         max-height: 7vh;
         padding-top: 25px;
+    }
+    #backToTop {
+        display: none;
     }
 }
 @media screen and (max-width: 1380px) {
