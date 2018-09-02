@@ -207,7 +207,7 @@ body {
     .lrcontainer {
         margin: auto;
         width: 90%;
-        padding: 0;
+        height: 100%;
 
     }
     .resumebtn {
