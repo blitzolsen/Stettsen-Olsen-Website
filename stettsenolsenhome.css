@@ -184,11 +184,11 @@ body {
     }
     .project{
         width: 100%;
-        padding-bottom: 0;
+        padding: 0;
     }
     .skill {
         max-height: 4vh;
-        padding-top: 0;
+        padding-top: 30px;
     }
     #backToTop {
         visibility: hidden;
@@ -207,7 +207,11 @@ body {
     .lrcontainer {
         margin: auto;
         width: 90%;
+        padding: 0;
 
+    }
+    .resumebtn {
+        padding-bottom: 10px;
     }
 }
 @media screen and (max-width: 1380px) {
