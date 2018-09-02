@@ -164,18 +164,7 @@ body {
         float: none;
         max-width: 100%;
     }
-    #resume {
-        background: rgba(255, 255, 255, .9);
-        visibility: hidden;
-        position: fixed;
-        top: 5%;
-        left: 0%;
-        right: 0%;
-        bottom: 5%;
-        border-radius: 12px;
-        text-align: center;
-        margin: auto;
-    }
+
     .tabs {
         display: none;
     }
