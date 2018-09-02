@@ -48,11 +48,6 @@
     padding-top: 5%;
     max-height: 90%;
 }
-.resumebtn{
-    /*padding: 40px;
-    border-radius: 12pt;
-    background: rgba(255, 255, 255, 1.0);*/
-}
 .rightproject{
     float: right;
     max-width: 50%;
@@ -151,10 +146,7 @@ body {
     outline: none;
     color: black;
     background: rgba(255, 255, 255, 0);
-}<link rel="icon" type="image/png" href="favicon.png" />
-<title>Stettsen Olsen - Home</title>
-<link rel="stylesheet" type="text/css" href="stettsenolsenhome.css">
-
+}
 .tabs:hover {
     background-color: rgba(255, 255, 255, .4);
 }
@@ -181,6 +173,9 @@ body {
         border-radius: 12px;
         text-align: center;
         margin: auto;
+    }
+    .tabs {
+        display: none;
     }
 }
 @media screen and (max-width: 1380px) {
