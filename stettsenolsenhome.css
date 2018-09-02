@@ -185,8 +185,12 @@ body {
         display: none;
     }
     #closebtnimg{
-        max-width: 8%;
+        max-width: 10%;
         float: right;
+    }
+    #resumepic {
+        padding-top: 5%;
+        max-height: 85%;
     }
 }
 @media screen and (max-width: 1380px) {
