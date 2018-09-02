@@ -26,7 +26,10 @@
             document.getElementById("resume").style.visibility = "hidden";
         }
         function adjustSize() {
-            document.getElementById("resume").style.maxHeight = (window.innerHeight * .7) + "px";
+            var y = (window.innerHeight * .9);
+            var x = y + "px";
+            document.getElementById("resume").style.maxHeight = x;
+            document.getElementById("resume").style.maxWidth = y * .8 + "px";
             /*document.getElementById("resume").style.width = (window.innerWidth * .4) + "px";
             document.getElementById("resume").style.fontSize = .8 + "vw";
             if (widow.innerWidth < 900) {
@@ -34,8 +37,7 @@
             } else {
                 document.getElementsByClassName("tabs").style.fontSize = 1 + "vw";
             }*/
-            document.getElementById("resume").style.width = (window.innerWidth * .8) + "px";
-            document.getElementById("hidebtn").style.fontSize = .8 + "vw";
+            /*document.getElementById("resume").style.width = (window.innerWidth * .8) + "px";*/
         }
     </script>
 </head>
@@ -123,11 +125,15 @@
                 </tr>
                 </tr>
             </table>-->
-            <img id="resumeflat" src="resumeflat.png" alt="resumeflat"><br>
-            <a href="https://github.com/blitzolsen/Portfolio/blob/master/Resume%20Stettsen%20Olsen.pdf" target="_blank">View
-                PDF
-            </a>
-            <!--<button id="hidebtn" onclick="bybyResume()">Hide Resume</button>-->
+            <div id="resumeflat">
+                <a id="closebtnlink" onclick="bybyResume()">
+                    <img id="closebtnimg" src="redx.png" alt="close">
+                </a>
+                <img id="resumepic" src="resumeflat.png" alt="resumeflat"><br>
+                <a class="resumebtn" href="https://github.com/blitzolsen/Portfolio/blob/master/Resume%20Stettsen%20Olsen.pdf" target="_blank">View
+                    PDF
+                </a>
+            </div>
         </div>
 
     <div id="content">

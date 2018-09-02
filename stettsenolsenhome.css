@@ -23,22 +23,35 @@
 #subheading {
     color:#e30000;
 }
+#closebtnimg{
+    max-width: 5%;
+    float: right;
+}
 #resume {
-    background: rgba(255, 255, 255, .9);
     visibility: hidden;
     position: fixed;
-    top: 5%;
-    left: 20%;
-    right: 20%;
-    bottom: 5%;
-    border-radius: 12px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     text-align: center;
     margin: auto;
-}
-#resumeflat{
-    padding-top: 2%;
-    height: 90%;
     background: rgba(255, 255, 255, 1.0);
+    border-radius: 12pt;
+    z-index: 97;
+}
+#resumeflat {
+    height: 100%;
+    width: 100%;
+}
+#resumepic {
+    padding-top: 5%;
+    max-height: 90%;
+}
+.resumebtn{
+    /*padding: 40px;
+    border-radius: 12pt;
+    background: rgba(255, 255, 255, 1.0);*/
 }
 .rightproject{
     float: right;
@@ -96,6 +109,7 @@ body {
     display: none;
     background-color: rgba(0, 3, 173, 0.6);
     border-radius: 12px;
+    z-index: 99;
 }
 .skill {
     max-height: 26pt;
