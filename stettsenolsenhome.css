@@ -184,6 +184,10 @@ body {
     #backToTop {
         display: none;
     }
+    #closebtnimg{
+        max-width: 8%;
+        float: right;
+    }
 }
 @media screen and (max-width: 1380px) {
     .project{
