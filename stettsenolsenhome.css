@@ -217,7 +217,7 @@ body {
         font-size: 2vh;
     }
 }
-@media screen and (max-width: 1380px) {
+@media screen and (min-width: 1380px) {
     .project{
         width: 100%;
         padding-bottom: 400px;
