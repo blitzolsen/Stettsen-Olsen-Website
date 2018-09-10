@@ -14,6 +14,7 @@
 }
 #headingback {
     background: url('abstract-background-7.jpg') no-repeat;
+    padding-bottom: 300px;
     /*border-bottom: solid black 4px;*/
     /*width: 100%;
     height: 0;
@@ -22,11 +23,38 @@
 #subheading {
     color:#e30000;
 }
+#closebtnimg{
+    max-width: 5%;
+    float: right;
+}
 #resume {
-    background: rgba(255, 255, 255, .5);
     visibility: hidden;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    margin: auto;
+    background: rgba(255, 255, 255, 1.0);
+    border-radius: 12pt;
+    z-index: 97;
+}
+#resumeflat {
+    height: 100%;
+    width: 100%;
+}
+#resumepic {
+    padding-top: 5%;
+    max-height: 90%;
+}
+.rightproject{
+    float: right;
+    max-width: 50%;
+}
+.leftproject{
+    float: left;
+    max-width: 50%;
 }
 th {
     padding-left: 10px;
@@ -57,7 +85,6 @@ body {
 }
 #PHPandJavaScript{
     background: url("x7t5l5az.png");
-    padding-top: 10px;
     color: white;
 }
 #CSS{
@@ -69,10 +96,6 @@ body {
 #android{
     background: url("b2.png");
 }
-#resumeflat{
-    max-width: 70%;
-    margin-left: 10%; 
-}
 #backToTop {
     position: fixed;
     bottom: 20px;
@@ -81,24 +104,30 @@ body {
     display: none;
     background-color: rgba(0, 3, 173, 0.6);
     border-radius: 12px;
+    z-index: 99;
 }
 .skill {
     max-height: 26pt;
     padding-top: 25px;
 }
 .project{
-    padding-bottom: 30px;
+    width: 100%;
+    padding-bottom: 400px;
+}
+.lrcontainer {
     margin: auto;
+    width: 90%;
+    height: 30%;
 }
 .piclink {
-    width: 75%;
+   width: 100%;
 }
 .videocontainer {
     position: relative;
     margin: auto;
-    width: 75%;
+    width: 100%;
     height: 0;
-    padding-bottom: 42.1875%;
+    padding-bottom: 56.25%;
 }
 .iframevid {
     position: absolute;
@@ -121,9 +150,85 @@ body {
 .tabs:hover {
     background-color: rgba(255, 255, 255, .4);
 }
-@media screen and (max-height: 600px) {
-    th {font-size: 10px;}
-    td {font-size: 10px;}
-    #heading {max-height: 100px;}
-    #headingPic {max-height: 75px;}
+.doublecontainer{
+    padding-bottom: 400px;
+}
+
+
+@media only screen and (max-device-width: 480px) {
+    #logo {
+        padding: 10px;
+        background: rgba(255, 255, 255, .5);
+    }
+    .headingPic {
+        max-width: 100%;
+    }
+    body{
+        font-size: 3vh;
+    }
+    .rightproject{
+        float: none;
+        max-width: 100%;
+    }
+    .leftproject{
+        float: none;
+        max-width: 100%;
+    }
+
+    .tabs {
+        display: none;
+    }
+    .mobilebtn {
+        display: block;
+        width: 100%;
+        font-size: 3vh;
+        background: rgba(255, 255, 255, .5);
+        border-radius: 24pt;
+    }
+    .project{
+        width: 100%;
+        padding: 0px;
+    }
+    .skill {
+        max-height: 4vh;
+        padding-top: 30px;
+    }
+    #backToTop {
+        visibility: hidden;
+    }
+    #closebtnimg{
+        max-width: 10%;
+        float: right;
+    }
+    #resumepic {
+        padding-top: 5%;
+        max-height: 85%;
+    }
+    #resumeflat {
+        padding-bottom: 10%;
+    }
+    .lrcontainer {
+        margin: auto;
+        width: 90%;
+        height: 100%;
+
+    }
+    .doublecontainer{
+        padding-bottom: 0px;
+    }
+    .resumebtn {
+        padding-bottom: 10px;
+    }
+    #qoute {
+        font-size: 48pt;
+    }
+}
+@media screen and (min-width: 1380px) {
+    .project{
+        width: 100%;
+        padding-bottom: 600px;
+    }
+    .doublecontainer{
+        padding-bottom: 600px;
+    }
 }

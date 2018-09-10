@@ -26,15 +26,18 @@
             document.getElementById("resume").style.visibility = "hidden";
         }
         function adjustSize() {
-            document.getElementById("resume").style.maxHeight = (window.innerHeight * .7) + "px";
-            document.getElementById("resume").style.width = (window.innerWidth * .4) + "px";
+            var y = (window.innerHeight * .9);
+            var x = y + "px";
+            document.getElementById("resume").style.maxHeight = x;
+            document.getElementById("resume").style.maxWidth = y * .8 + "px";
+            /*document.getElementById("resume").style.width = (window.innerWidth * .4) + "px";
             document.getElementById("resume").style.fontSize = .8 + "vw";
             if (widow.innerWidth < 900) {
                 document.getElementsByClassName("tabs").style.fontSize = .6 + "vw";
             } else {
                 document.getElementsByClassName("tabs").style.fontSize = 1 + "vw";
-            }
-            document.getElementById("hidebtn").style.fontSize = .8 + "vw";
+            }*/
+            /*document.getElementById("resume").style.width = (window.innerWidth * .8) + "px";*/
         }
     </script>
 </head>
@@ -48,143 +51,132 @@
             </div>
 
             <div class="navigation">
-                <!--<h3 style="border-bottom: solid black 2px; margin-bottom: 0;">Navigation</h3>-->
-                <button class="tabs" onclick="resumeVis()">Resume</button>
-                <button class="tabs" onclick="window.open('https://github.com/blitzolsen/Portfolio.git')">View Portfolio
+                <button class="tabs" onclick="window.location.href='./index.html'">Home</button>
+                <button class="tabs mobilebtn" onclick="resumeVis()">Resume</button>
+                <button class="tabs mobilebtn" onclick="window.open('https://github.com/blitzolsen/Portfolio.git')">View Portfolio
                     on GitHub</button>
                 <button class="tabs" onclick="window.location.href='#PHPandJavaScript'">PHP and Javascript</button>
                 <button class="tabs" onclick="window.location.href='#CSS'">CSS</button>
                 <button class="tabs" onclick="window.location.href='#JavaScript'">JavaScript</button>
                 <button class="tabs" onclick="window.location.href='#android'">Android</button>
+                <button class="tabs mobilebtn" onclick="window.location.href='./aboutme.html'">About Me</button>
             </div>
         </div>
-
-        <div id="resume">
-            <!--
-            <table id="resume_table">
-                <tr>
-                    <th>Contact Information</th>
-                </tr>
-                <tr>
-                    <td>(801) 358-4174<br> stettsen@gmail.com
-                        <br> 2177 N Sunset Drive, Lehi, Utah
-                    </td>
-                </tr>
-                <tr>
-                    <th>Skills</th>
-                </tr>
-                <tr>
-                    <td>
-                        <ul>
-                            <li>Java</li>
-                            <li>C++</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>XML</li>
-                            <li>AJAX</li>
-                            <li>PHP</li>
-                            <li>JSON</li>
-                            <li>SQL</li>
-                        </ul>
-                    </td>
-                </tr>
-                </tr>
-                <tr>
-                    <th>Work Experience</th>
-                </tr>
-                <tr>
-                    <td>
-                        <ul>
-                            <li>3 years as a Marketing and Localization Intern at Associated Food Stores</li>
-                            <li>3 years as a Board Member and Technology Representative on the Utah Pest Control and Lawn
-                                Association</li>
-                            <li>5 years as the Marketing Technician for Wasatch Exterminators</li>
-                            <li>2 years in humanitarian leadership roles</li>
-                    </td>
-                </tr>
-                </tr>
-                <tr>
-                    <th>Education</th>
-                </tr>
-                <tr>
-                    <td>
-                        <ul>
-                            <li><b>Engineering - Brigham Young University - Idaho</b><br>
-                                <span style="color:#e30000">Graduating in July 2019</span></li>
-                            <li><b>Associate of Arts - Salt Lake Community College</b></li>
-                    </td>
-                </tr>
-                </tr>
-            </table>-->
-            <img id="resumeflat" src="resumeflat.png" alt="resumeflat">
-            <a href="https://github.com/blitzolsen/Portfolio/blob/master/Resume%20Stettsen%20Olsen.pdf" target="_blank">View
-                PDF</a>
-            <!--<button id="hidebtn" onclick="bybyResume()">Hide Resume</button>-->
+        <div id="qoute" style="float:right; color:white; font-size: 26pt; padding-right: 20px; padding-top: 20px;">
+            <p><i>"I wont be impressed with<br> technology until I can<br> download snacks"<br> -Jillian Michaels</i>
+            </p>
         </div>
     </div>
 
+        <div id="resume">
+           
+            <div id="resumeflat">
+                <a id="closebtnlink" onclick="bybyResume()">
+                    <img id="closebtnimg" src="redx.png" alt="close">
+                </a>
+                <img id="resumepic" src="Resume Stettsen Olsen.png" alt="resumeflat"><br>
+                <a class="resumebtn" href="https://github.com/blitzolsen/Portfolio/blob/master/Resume%20Stettsen%20Olsen.pdf" target="_blank">View
+                    PDF
+                </a>
+            </div>
+        </div>
 
     <div id="content">
 
         <div class="project" id="PHPandJavaScript">
             <img class="skill" src="PHP and Javascript.png" alt="PortfolioHeader">
-            <br>
+            <div class="lrcontainer">
+                <div class="leftproject">
+                    <br>
 
-            <span style="color: #e30000">Fresh Water Fish Mock E-Commerce Site</span>
-            <br>
-            <a href="CSS_JAVASCRIPT_HTML_PHP/index.html" target="_blank">
-                <img class="piclink" src="freshWaterPHPMock.png" alt="Fresh Water Fish Mock E-Commerce">
-            </a>
-            <p>You may view the webpage above or, because GitHub does not support PHP, you may wish to use
-                <a class="textlink" href="https://github.com/blitzolsen/Portfolio/tree/master/CSS_JAVASCRIPT_HTML_PHP" target="_blank">this</a>
-                link
-            </p>
+                    <span style="color: #e30000">Fresh Water Fish Mock E-Commerce Site</span>
+                    <br>
+                    <a href="CSS_JAVASCRIPT_HTML_PHP/index.html" target="_blank">
+                        <img class="piclink" src="freshWaterPHPMock.png" alt="Fresh Water Fish Mock E-Commerce">
+                    </a>
+                </div>
+                <div class="rightproject">
+                    <p style="margin-top: 25%; margin-left: 5%; margin-right: 5%;">
+                        This website uses JavaScript to dynamically adjust the size and style of elements. The resume button above appears and disappears
+                        when the button is pushed. To see another example of JavaScript and PHP please see the less polished
+                        webpage to the left. Because GitHub does not support PHP, you will still be able to see most JavaScript
+                        in action but you may wish to download the source code
+                        <a class="textlink" href="https://github.com/blitzolsen/Portfolio/tree/master/CSS_JAVASCRIPT_HTML_PHP" target="_blank">here</a>
+                    </p>
+                </div>
+            </div>
         </div>
 
 
         <div class="project" id="CSS">
             <img class="skill" src="CSS.png" alt="PortfolioHeader">
-            <p>
-                <span style="color: #e30000">Mock Website</span>
-                <br>
-                <a href="CSS/index.html" target="_blank">
-                    <img class="piclink" src="oranges site.png" alt="Oranges Site">
-                </a>
-                <br>See code in
-                <a class="textlink" href="https://github.com/blitzolsen/Portfolio/tree/master/CSS" target="_blank">Repository</a>
-            </p>
+            <div class="lrcontainer">
+                <div class="rightproject">
+                    <img class="piclink" src="Screenshot from 2018-08-28 19-16-56.png" alt="Css">
+                </div>
+                <div class="leftproject">
+                    <p style="margin-top: 25%; margin-left: 5%; margin-right: 5%;">
+                        No website is complete without it's polish. This webpage is a prime example of CSS.
+                    </p>
+                </div>
+            </div>
         </div>
-
 
         <div class="project" id="JavaScript">
             <img class="skill" src="Javascript.png" alt="PortfolioHeader">
-            <p>
-                <span style="color: #e30000">JavaScript Website</span>
-                <br>
-                <a href="JAVASCRIPT/index.html" target="_blank">
-                    <img class="piclink" src="javascript_site.png" alt="Oranges Site">
-                </a>
-                <br>See code in
-                <a class="textlink" href="https://github.com/blitzolsen/Portfolio/tree/master/JAVASCRIPT" target="_blank">Repository</a>
-            </p>
+            <div class="lrcontainer">
+                <div class="leftproject">
+                    <a href="JAVASCRIPT/index.html" target="_blank">
+                        <img class="piclink" src="javascript_site.png" alt="Oranges Site">
+                    </a>
+                </div>
+                <div class="rightproject">
+                    <p style="margin-top: 25%; margin-left: 5%; margin-right: 5%; color: white;">
+                        The website mentioned above is a stronger representation of JavaScript, but I decided to include this since it is pure JavaScript
+                        and it's a place holder for a much better example to come. I am currently working on a web application
+                        adaptation of my android app example. You can see the code for the website to the left
+                        <a class="textlink" href="https://github.com/blitzolsen/Portfolio/tree/master/JAVASCRIPT" target="_blank">here</a>
+                        or click on the image to visit the page.
+                    </p>
+                </div>
+            </div>
         </div>
-        <iframe class="iframevid" src="https://www.youtube.com/embed/PjoszaB-sAw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>    
-              
+
         <div class="project" id="android">
             <img class="skill" src="android and java.png" alt="android and java">
-            <p>
-                <span style="color: #e30000">The Meal Master Application</span>
-                <br>
-                <div class="videocontainer">
-                    <iframe class="iframevid" src="https://www.youtube.com/embed/PjoszaB-sAw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>    
+            <div class="lrcontainer doublecontainer">
+                <div class="rightproject" style="width: 100%; margin-top: 5%;">
+                    <div class="videocontainer">
+                        <iframe class="iframevid" src="https://www.youtube.com/embed/PjoszaB-sAw" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
                 </div>
-                <br>See code in
-                <a class="textlink" href="https://github.com/blitzolsen/MealMaster/" target="_blank">Repository</a>
-            </p>
+                <div class="leftproject">
+                    <p style="margin-top: 17%; margin-left: 5%; margin-right: 5%;">
+                        This is my current project and how I've enjoyed it! Like web design, I love seeing a pretty interface 
+                        complimented with clean and efficient code. This lacks the interface that I would like, but you can see what 
+                        it does in the video. My favorite part of what I've made thus far is the fraction class. The class handles 
+                        the math, simplification, and comparing of all fractions. This keeps the rest of the code neat and tidy. A Singleton
+                        pattern is used so that the data can be accessed from all activities without having to pass a bunch of objects.
+                        You can see the code for this app in it's
+                        <a class="textlink" href="https://github.com/blitzolsen/MealMaster/" target="_blank">Repository</a><br><br>
+                    </p>
+                </div>
+            </div>
+            <div class="lrcontainer">
+                    <div class="leftproject" style="width: 100%; margin-top: 5%;">
+                        <div class="videocontainer">
+                            <iframe class="iframevid" src="https://www.youtube.com/embed/gIMKyO2mU4A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="rightproject">
+                        <p style="margin-top: 35%; margin-left: 5%; margin-right: 5%;">
+                            This is an update on the Meal Master application. This is a small example of dynamic UI.<br><br>
+                        </p>
+                    </div>
+                </div>
         </div>
-    </div>
-    <button id="backToTop" onclick="window.location.href='#headingback'">Back to Top</button>
+        <button id="backToTop" onclick="window.location.href='#headingback'">Back to Top</button>
 </body>
 
 </html>
