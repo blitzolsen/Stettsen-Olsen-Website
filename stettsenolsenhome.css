@@ -13,7 +13,7 @@
     max-width: 25%;
 }
 #headingback {
-    background: url('abstract-background-7.jpg') no-repeat;
+    background: url('abstract-background-7fade.png') no-repeat;
     padding-bottom: 300px;
     /*border-bottom: solid black 4px;*/
     /*width: 100%;
@@ -80,7 +80,8 @@ td {
 }
 body {
    /* background-color: #232323;*/
-   background-image: radial-gradient(#232323, black);
+   /*background-image: radial-gradient(#232323, black);*/
+   background: url("metal89pxdark.png");
 
     margin: 0%;
     font-family: "Verdana", Geneva, sans-serif;
