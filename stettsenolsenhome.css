@@ -13,7 +13,7 @@
     max-width: 25%;
 }
 #headingback {
-    background: url('abstract-background-7fade.png') no-repeat;
+    background: url('abstract-background-7.jpg') no-repeat;
     padding-bottom: 300px;
     /*border-bottom: solid black 4px;*/
     /*width: 100%;
@@ -229,7 +229,7 @@ body {
         font-size: 48pt;
     }
 }
-@media screen and (min-width: 1380px) {
+@media screen and (min-width: 1350px) {
     .project{
         width: 100%;
         padding-bottom: 600px;
