@@ -79,22 +79,26 @@ td {
     background-color: red;
 }
 body {
-    /*background: rgba(255, 255, 255, .4);*/
+   /* background-color: #232323;*/
+   background-image: radial-gradient(#232323, black);
     margin: 0%;
     font-family: "Verdana", Geneva, sans-serif;
 }
 #PHPandJavaScript{
-    background: url("x7t5l5az.png");
+   /* background: url("x7t5l5az.png");*/
     color: white;
 }
 #CSS{
-    background: url("b2.png");
+   /* background: url("b2.png");*/
+   color: white;
 }
 #JavaScript{
-    background: url("x7t5l5az.png");
+   /* background: url("x7t5l5az.png");*/
+   color: white;
 }
 #android{
-    background: url("b2.png");
+    /*background: url("b2.png");*/
+    color: white;
 }
 #backToTop {
     position: fixed;
@@ -107,7 +111,7 @@ body {
     z-index: 99;
 }
 .skill {
-    max-height: 26pt;
+    max-height: 100pt;
     padding-top: 25px;
 }
 .project{

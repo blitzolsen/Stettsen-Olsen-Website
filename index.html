@@ -55,10 +55,10 @@
                 <button class="tabs mobilebtn" onclick="resumeVis()">Resume</button>
                 <button class="tabs mobilebtn" onclick="window.open('https://github.com/blitzolsen/Portfolio.git')">View Portfolio
                     on GitHub</button>
+                <button class="tabs" onclick="window.location.href='#android'">Android</button>
                 <button class="tabs" onclick="window.location.href='#PHPandJavaScript'">PHP and Javascript</button>
                 <button class="tabs" onclick="window.location.href='#CSS'">CSS</button>
                 <button class="tabs" onclick="window.location.href='#JavaScript'">JavaScript</button>
-                <button class="tabs" onclick="window.location.href='#android'">Android</button>
                 <button class="tabs mobilebtn" onclick="window.location.href='./aboutme.html'">About Me</button>
             </div>
         </div>
@@ -82,6 +82,41 @@
         </div>
 
     <div id="content">
+
+            <div class="project" id="android">
+                    <img class="skill" src="Skill_Icons/Skill_Icon_Android.png" alt="android and java">
+                    <div class="lrcontainer doublecontainer">
+                        <div class="rightproject" style="width: 100%; margin-top: 5%;">
+                            <div class="videocontainer">
+                                <iframe class="iframevid" src="https://www.youtube.com/embed/PjoszaB-sAw" frameborder="0" allow="autoplay; encrypted-media"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="leftproject">
+                            <p style="margin-top: 17%; margin-left: 5%; margin-right: 5%;">
+                                This is my current project and how I've enjoyed it! Like web design, I love seeing a pretty interface 
+                                complimented with clean and efficient code. This lacks the interface that I would like, but you can see what 
+                                it does in the video. My favorite part of what I've made thus far is the fraction class. The class handles 
+                                the math, simplification, and comparing of all fractions. This keeps the rest of the code neat and tidy. A Singleton
+                                pattern is used so that the data can be accessed from all activities without having to pass a bunch of objects.
+                                You can see the code for this app in it's
+                                <a class="textlink" href="https://github.com/blitzolsen/MealMaster/" target="_blank">Repository</a><br><br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="lrcontainer">
+                            <div class="leftproject" style="width: 100%; margin-top: 5%;">
+                                <div class="videocontainer">
+                                    <iframe class="iframevid" src="https://www.youtube.com/embed/gIMKyO2mU4A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="rightproject">
+                                <p style="margin-top: 35%; margin-left: 5%; margin-right: 5%;">
+                                    This is an update on the Meal Master application. This is a small example of dynamic UI.<br><br>
+                                </p>
+                            </div>
+                        </div>
+                </div>
 
         <div class="project" id="PHPandJavaScript">
             <img class="skill" src="PHP and Javascript.png" alt="PortfolioHeader">
@@ -142,40 +177,6 @@
             </div>
         </div>
 
-        <div class="project" id="android">
-            <img class="skill" src="android and java.png" alt="android and java">
-            <div class="lrcontainer doublecontainer">
-                <div class="rightproject" style="width: 100%; margin-top: 5%;">
-                    <div class="videocontainer">
-                        <iframe class="iframevid" src="https://www.youtube.com/embed/PjoszaB-sAw" frameborder="0" allow="autoplay; encrypted-media"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="leftproject">
-                    <p style="margin-top: 17%; margin-left: 5%; margin-right: 5%;">
-                        This is my current project and how I've enjoyed it! Like web design, I love seeing a pretty interface 
-                        complimented with clean and efficient code. This lacks the interface that I would like, but you can see what 
-                        it does in the video. My favorite part of what I've made thus far is the fraction class. The class handles 
-                        the math, simplification, and comparing of all fractions. This keeps the rest of the code neat and tidy. A Singleton
-                        pattern is used so that the data can be accessed from all activities without having to pass a bunch of objects.
-                        You can see the code for this app in it's
-                        <a class="textlink" href="https://github.com/blitzolsen/MealMaster/" target="_blank">Repository</a><br><br>
-                    </p>
-                </div>
-            </div>
-            <div class="lrcontainer">
-                    <div class="leftproject" style="width: 100%; margin-top: 5%;">
-                        <div class="videocontainer">
-                            <iframe class="iframevid" src="https://www.youtube.com/embed/gIMKyO2mU4A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="rightproject">
-                        <p style="margin-top: 35%; margin-left: 5%; margin-right: 5%;">
-                            This is an update on the Meal Master application. This is a small example of dynamic UI.<br><br>
-                        </p>
-                    </div>
-                </div>
-        </div>
         <button id="backToTop" onclick="window.location.href='#headingback'">Back to Top</button>
 </body>
 
