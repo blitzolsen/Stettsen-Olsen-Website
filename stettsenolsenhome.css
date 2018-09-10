@@ -80,8 +80,8 @@ td {
 }
 body {
    /* background-color: #232323;*/
-   /*background-image: radial-gradient(#232323, black);*/
-   background: url("metal_seamless_texture_62_by_jojo_ojoj-d8xm7qx.jpg");
+   background-image: radial-gradient(#232323, black);
+  /* background: url("metal_seamless_texture_62_by_jojo_ojoj-d8xm7qx.jpg");*/
     margin: 0%;
     font-family: "Verdana", Geneva, sans-serif;
 }
