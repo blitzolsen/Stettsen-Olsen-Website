@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stett Flex Server</title>
+    <style>
+        #movieRequests {
+            border: 2px solid white;
+            border-radius: 12px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 95%;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        #addedRequests {
+            border: 2px solid white;
+            border-radius: 12px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 95%;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        #commentBoard {
+            border: 2px solid white;
+            border-radius: 12px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 95%;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        th {
+            border-bottom: 2px solid black;
+        }
+
+        td {
+            border-bottom: 2px solid white;
+        }
+
+        #userwelcome {
+            float: right;
+        }
+
+        #changeUser {
+            float: right;
+        }
+
+        #requestsimg {
+            height: 24px;
+        }
+
+        #addMessage {
+            margin: auto;
+            border-radius: 12px;
+            background-color: orange;
+        }
+
+        @media only screen and (max-device-width: 480px) {
+            body {
+                width: auto;
+                text-align: center;
+                font-size: 2vh;
+            }
+
+            #userwelcome {
+                float: none;
+            }
+
+            #headimage {
+                height: 5vh;
+            }
+
+            button {
+                font-size: 3vh;
+                float: none;
+                width: 75%;
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+
+            div {
+                width: auto;
+                text-align: center;
+                font-size: 2vh;
+            }
+
+            #movieRequests {
+                border: 2px solid white;
+                border-radius: 12px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.5);
+                border-radius: 12px;
+                margin-top: 20px;
+
+            }
+
+            #addedRequests {
+                border: 2px solid white;
+                border-radius: 12px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.5);
+                border-radius: 12px;
+                margin-top: 20px;
+
+            }
+
+            #commentBoard {
+                border: 2px solid white;
+                border-radius: 12px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.5);
+                border-radius: 12px;
+                margin-top: 20px;
+            }
+
+            #userwelcome {
+                float: none;
+            }
+
+            #changeUser {
+                float: none;
+            }
+
+            #requestsimg {
+                height: 4vh;
+                margin-top: 40px;
+            }
+
+            #addMessage {
+                margin-top: 40px;
+            }
+        }
+    </style>
+    <script>
+        function User() {
+            this.name;
+            this.displayName;
+        }
+        function Comment() {
+            this.commenter;
+            this.comment_message;
+        }
+        Comment.prototype.comment_AsString = function () {
+            return "\"" + this.comment_message + "\"" + " \-" + this.commenter;
+        };
+        function Movie() {
+            this.movieTitle;
+            this.personRequest;
+            this.votes;
+            this.comments;
+        }
+        Movie.prototype.commentsAsString = function () {
+            var comment = "";
+            for (var i = 0; i < this.comments; i++) {
+                comment += this.comments[i].comment_AsString() + "\n";
+            }
+            return comment;
+        };
+        /********************************
+        *Load
+        ********************************/
+        function load() {
+            login();
+            //clearLocalStorage();
+            clearLocalStorageDataBase();
+            loadDatabase();
+            loadCommentDatabase();
+            loadAddedDatabase();
+            setInterval(refreshTables, 20000);
+        }
+        /********************************
+        *Login
+        ********************************/
+        function login() {
+            var name;
+            var password;
+            if (localStorage.getItem("userName") == "" || localStorage.getItem("userName") === null) {
+                do {
+                    name = prompt("Please enter your name");
+                    if (name == "Stettsen") {
+                        password = prompt("Password:");
+                    }
+                } while (name == "Stettsen" && password != "istheman");
+                localStorage.setItem("userName", name);
+                localStorage.setItem("displayName", name);
+            }
+            else {
+                name = localStorage.getItem("userName");
+            }
+            document.getElementById('userwelcome').innerHTML = "Welcome " + name + "!";
+        }
+        /********************************
+        *changeUser
+        ********************************/
+        function changeUser() {
+            do {
+                    name = prompt("Please enter your name");
+                    if (name == "Stettsen") {
+                        password = prompt("Password:");
+                    }
+                } while (name == "Stettsen" && password != "istheman");
+                localStorage.setItem("userName", name);
+                localStorage.setItem("displayName", name);
+
+            document.getElementById('userwelcome').innerHTML = "Welcome " + name + "!";
+        }
+        /********************************
+        *clearLocalStorage
+        ********************************/
+        function clearLocalStorage() {
+            localStorage.clear();
+        }
+        /********************************
+        *clearLocalStorageDataBase
+        ********************************/
+        function clearLocalStorageDataBase() {
+            localStorage.removeItem('database');
+            localStorage.removeItem('commentsdatabase');
+        }
+        /********************************
+        *loadDatabase
+        ********************************/
+        function loadDatabase() {
+            //alert(localStorage.getItem('database')); //for testing
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var table = document.getElementById('movieRequests');
+                    var database = JSON.parse(this.responseText);
+                    //alert(this.responseText); // for testing
+                    for (var i = 0; i < database.length; i++) {
+                        var movie = database[i];
+                        var row = table.insertRow();
+                        var row_title = row.insertCell(0);
+                        var row_request = row.insertCell(1);
+                        var row_votes = row.insertCell(2);
+                        var row_comments = row.insertCell(3);
+                        var row_button = row.insertCell(4);
+                        if(localStorage.getItem("userName") == "Stettsen"){
+                        var row_btnAdded = row.insertCell(5);
+                        row_btnAdded.innerHTML = "<button onclick='addToAddedRequests(this)' style='border-radius: 12px; background-color: green;'>Added</button>";
+
+                        }
+                        row_title.innerHTML = movie.movieTitle;
+                        row_request.innerHTML = movie.personRequest;
+                        row_votes.innerHTML = movie.votes;
+                        row_comments.innerHTML = movie.comments;
+                        row_button.innerHTML = "<button onclick='getId(this)' style='border-radius: 12px; background-color: orange;'>Add Vote</button>";
+                        localStorage.setItem('database', JSON.stringify(database));
+                        //alert(localStorage.getItem('database')); //for testing
+                    }
+                }
+            };
+            xhttp.open("GET", 'database.txt', true);
+            xhttp.setRequestHeader("Cache-Control", "max-age=0"); // the cache will hold old data if not cleared
+            xhttp.send();
+        }
+        /********************************
+        *loadCommentDatabase
+        ********************************/
+        function loadCommentDatabase() {
+            //alert(localStorage.getItem('commentsdatabase')); //for testing
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var table = document.getElementById('commentBoard');
+                    var commentsdatabase = JSON.parse(this.responseText);
+                    //alert(this.responseText); // for testing
+                    //alert(commentsdatabase[0].comment_AsString());
+                    for (var i = 0; i < commentsdatabase.length; i++) {
+                        var comment = commentsdatabase[i];
+                        var row = table.insertRow();
+                        var row_comment = row.insertCell(0);
+
+                        row_comment.innerHTML = "\"" + comment.comment_message + "\"" + " \-" + comment.commenter;
+                        localStorage.setItem('commentsdatabase', this.responseText);
+                        //alert(localStorage.getItem('commentsdatabase')); //for testing
+                    }
+                }
+            };
+            xhttp.open("GET", 'comments.txt', true);
+            xhttp.setRequestHeader("Cache-Control", "max-age=0"); // the cache will hold old data if not cleared
+            xhttp.send();
+        }
+        /********************************
+        *addedDatabase
+        ********************************/
+        function loadAddedDatabase() {
+            //alert(localStorage.getItem('database')); //for testing
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var table = document.getElementById('addedRequests');
+                    var database = JSON.parse(this.responseText);
+                    //alert(this.responseText); // for testing
+                    for (var i = 0; i < database.length; i++) {
+                        var movie = database[i];
+                        var row = table.insertRow();
+                        var row_title = row.insertCell(0);
+                        var row_request = row.insertCell(1);
+                        var row_votes = row.insertCell(2);
+                        var row_comments = row.insertCell(3);
+                        row_title.innerHTML = movie.movieTitle;
+                        row_request.innerHTML = movie.personRequest;
+                        row_votes.innerHTML = movie.votes;
+                        row_comments.innerHTML = movie.comments;
+                        localStorage.setItem('addeddatabase', JSON.stringify(database));
+                        //alert(localStorage.getItem('database')); //for testing
+                    }
+                }
+            };
+            xhttp.open("GET", 'added.txt', true);
+            xhttp.setRequestHeader("Cache-Control", "max-age=0"); // the cache will hold old data if not cleared
+            xhttp.send();
+        }
+        /********************************
+        *refreshTables
+        ********************************/
+        function refreshTables() {
+            clearTables();
+            loadDatabase();
+            loadCommentDatabase();
+        }
+        /********************************
+        *clearTables
+        ********************************/
+        function clearTables() {
+            var Parent = document.getElementById('movieRequests');
+            /*while(Parent.hasChildNodes()) {
+               Parent.removeChild(Parent.firstChild);
+            }*/
+
+            for (var i = Parent.rows.length - 1; i > 0; i--) {
+                Parent.deleteRow(i);
+            }
+
+            var Parent2 = document.getElementById('commentBoard');
+            while (Parent2.hasChildNodes()) {
+                Parent2.removeChild(Parent2.firstChild);
+            }
+            /*for(var i = Parent2.rows.length - 1; i > 0; i--){
+               Parent2.deleteRow(i);
+            }*/
+        }
+        /********************************
+        *addToDataBase
+        ********************************/
+        function addToDataBase() {
+            var movie = new Movie();
+            movie.movieTitle = prompt("Please enter the movie or show title");
+            movie.comments = prompt("Would you like to add any comments?");
+            movie.votes = 1;
+            movie.personRequest = localStorage.getItem("displayName");
+            var table = document.getElementById('movieRequests');
+            if (movie.movieTitle != "" && movie.movieTitle != null) {
+                var row = table.insertRow();
+                var row_title = row.insertCell(0);
+                var row_request = row.insertCell(1);
+                var row_votes = row.insertCell(2);
+                var row_comments = row.insertCell(3);
+                var row_button = row.insertCell(4);
+                if(localStorage.getItem("userName") == "Stettsen"){
+                        var row_btnAdded = row.insertCell(5);
+                        row_btnAdded.innerHTML = "<button onclick='addToAddedRequests(this)' style='border-radius: 12px; background-color: green;'>Added</button>";
+
+                        }
+                row_title.innerHTML = movie.movieTitle;
+                row_request.innerHTML = movie.personRequest;
+                row_votes.innerHTML = movie.votes;
+                row_comments.innerHTML = movie.comments;
+                row_button.innerHTML = "<button onclick='getId(this)' style='border-radius: 12px; background-color: orange;'>Add Vote</button>";
+
+                var database = [];
+                if (localStorage.getItem('database') != null) {
+                    var d2 = localStorage.getItem('database');
+                    if (d2 != "") {
+                        database = JSON.parse(d2);
+                    }
+                }
+                database.push(movie);
+                localStorage.setItem('database', JSON.stringify(database));
+                write(JSON.stringify(database));
+            }
+        }
+        /********************************
+        *getId
+        ********************************/
+        function getId(element) {
+            //alert(/*"row" + */element.parentNode.parentNode.rowIndex);  //for testing
+            //+ " - column" + element.parentNode.cellIndex);
+            addVote(element.parentNode.parentNode.rowIndex);
+        }
+        /********************************
+        *addVote
+        ********************************/
+        function addVote(position) {
+            var database = [];
+            if (localStorage.getItem('database') != null) {
+                var d2 = localStorage.getItem('database');
+                if (d2 != "") {
+                    database = JSON.parse(d2);
+                }
+            }
+
+            database[position - 1].votes += 1;
+            var count = database[position - 1].votes;
+            document.getElementById('movieRequests').rows[position].cells[2].innerHTML = count;
+            localStorage.setItem('database', JSON.stringify(database));
+            write(JSON.stringify(database));
+        }
+        /********************************
+        *write
+        ********************************/
+        function write(input) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    //alert(this.responseText);
+                }
+            };
+            xmlhttp.open("GET", "savedata.php?q=" + input, true);
+            xmlhttp.send();
+        }
+        /********************************
+        *switchScreen
+        ********************************/
+        function switchScreen() {
+            if (document.getElementById('list').style.display == "none") {
+                document.getElementById('list').style.display = "block";
+                document.getElementById('chat').style.display = "none";
+                document.getElementById('addMessage').style.display = "none";
+                document.getElementById('togglebtn').innerHTML = "Message Board";
+            }
+            else {
+                document.getElementById('list').style.display = "none";
+                document.getElementById('chat').style.display = "block";
+                document.getElementById('addMessage').style.display = "block";
+                document.getElementById('togglebtn').innerHTML = "Request List";
+            }
+        }
+        /********************************
+        *addMessage
+        ********************************/
+        function addMessage() {
+            var comment = new Comment();
+            comment.comment_message = prompt();
+            comment.commenter = localStorage.getItem('displayName');
+            var table = document.getElementById('commentBoard');
+            if (comment.comment_message != "" && comment.comment_message != null) {
+                var row = table.insertRow();
+                var row_comment = row.insertCell(0);
+
+                row_comment.innerHTML = comment.comment_AsString();
+
+                var commentsdatabase = [];
+                if (localStorage.getItem('commentsdatabase') != null) {
+                    var d2 = localStorage.getItem('commentsdatabase');
+                    if (d2 != "") {
+                        commentsdatabase = JSON.parse(d2);
+                    }
+                }
+                commentsdatabase.push(comment);
+                localStorage.setItem('commentsdatabase', JSON.stringify(commentsdatabase));
+                writeComments(JSON.stringify(commentsdatabase));
+            }
+        }
+        /********************************
+        *writeComments
+        ********************************/
+        function writeComments(input) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    //alert(this.responseText);
+                }
+            };
+            xmlhttp.open("GET", "savecomments.php?q=" + input, true);
+            xmlhttp.send();
+        }
+        /********************************
+        *writeaddeddatabase
+        ********************************/
+        function writeaddeddatabase(input) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    //alert(this.responseText);
+                }
+            };
+            xmlhttp.open("GET", "saveadded.php?q=" + input, true);
+            xmlhttp.send();
+        }
+        /********************************
+        *addToAddedRequests
+        ********************************/
+        function addToAddedRequests(element) {
+            var row = element.parentNode.parentNode.rowIndex;
+        
+            var movieRequeststable = document.getElementById('movieRequests');
+            var addedRequeststable = document.getElementById('addedRequests');
+
+            var database = [];
+                if (localStorage.getItem('database') != null) {
+                    var d2 = localStorage.getItem('database');
+                    if (d2 != "") {
+                        database = JSON.parse(d2);
+                    }
+                }
+                var addedtobase = [];
+                if (localStorage.getItem('addedtobase') != null) {
+                    var d3 = localStorage.getItem('addedtobase');
+                    if (d3 != "") {
+                        database = JSON.parse(d3);
+                    }
+                }
+
+                var movie = database[row - 1];
+
+                addedtobase.push(movie);
+                database.splice(row - 1, 1);
+                alert(JSON.stringify(movie));
+                
+                movieRequeststable.deleteRow(row);
+                var row = addedRequeststable.insertRow();
+                var row_title = row.insertCell(0);
+                var row_request = row.insertCell(1);
+                var row_votes = row.insertCell(2);
+                var row_comments = row.insertCell(3);
+                row_title.innerHTML = movie.movieTitle;
+                row_request.innerHTML = movie.personRequest;
+                row_votes.innerHTML = movie.votes;
+                row_comments.innerHTML = movie.comments;
+
+                localStorage.setItem('database', JSON.stringify(database));
+                write(JSON.stringify(database));
+                localStorage.setItem('addedtobase', JSON.stringify(addedtobase));
+                writeaddeddatabase(JSON.stringify(addedtobase));
+        }
+    </script>
+</head>
+
+<body style="background: url('earthfromthemoon.jpg'); background-size: cover; background-repeat: no-repeat;" onload="load()">
+    <div id="header">
+        <img id="headimage" src="plex server2.png" alt="STETT FLEX SERVER" style="height: 15vh;">
+        <button onclick="changeUser()" id="changeUser" class="mblbtn" style="border-radius: 12px; background-color: orange;">Change
+            User</button>
+        <h3 id="userwelcome" style="color:white;"></h3>
+    </div>
+    <div id="viewbtns">
+        <button id="togglebtn" class="mblbtn" onclick="switchScreen()" style="border-radius: 12px; background-color: orange;">Message
+            Board</button>
+    </div>
+    <div id="list" style="text-align: center;">
+        <img src="requests.png" id="requestsimg" alt="Movie Requests"><br><br>
+        <button onclick="addToDataBase()" class="mblbtn" style="border-radius: 12px; background-color: orange;">Add
+            Request</button>
+        <table id="movieRequests" class="table">
+            <tr>
+                <th>Movie or Show Title</th>
+                <th>Requester</th>
+                <th>Votes</th>
+                <th>Comments</th>
+            </tr>
+        </table>
+        <div id="addedStuff">
+            <h3 style="color: white;">Added Items</h3>
+            <table id="addedRequests" class="table">
+                <tr>
+                    <th>Movie or Show Title</th>
+                    <th>Requester</th>
+                    <th>Votes</th>
+                    <th>Comments</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="chat" style="text-align: center; display: none;">
+        <button id="addMessage" onclick="addMessage()">Add Comment</button>
+        <table id="commentBoard" class="table">
+        </table>
+    </div>
+
+</body>
+
+</html>
